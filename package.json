@@ -1,0 +1,26 @@
+{
+  "name": "chestnuts",
+  "version": "1.0.0",
+  "description": "javascript library toy project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CGerAJ/chestnuts.git"
+  },
+  "keywords": [
+    "ES6",
+    "conponent"
+  ],
+  "author": "CGerAJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CGerAJ/chestnuts/issues"
+  },
+  "homepage": "https://github.com/CGerAJ/chestnuts#readme",
+  "devDependencies": {
+    "express": "^4.16.3"
+  }
+}
