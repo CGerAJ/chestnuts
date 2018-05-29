@@ -1,0 +1,92 @@
+$namespace:"chestnuts-";
+
+/* 重要颜色 */
+
+$blue:#00a0e9;
+$lightBlue:#7ecef4;
+$red: #D81E06;
+$green:#1fb57c;
+$golden:#c1ab79;
+$orange:#ff9536;
+$black:#333;
+/* 一般颜色 */
+
+$darkGray:#666;
+$gray:#888f9b;
+$lightGray:#acb2c1;
+/* 较弱颜色 */
+
+$darkWeak:#ededed;
+$lightWeak:#f3f3f3;
+/* 边框颜色 */
+
+$borDefault:#d8d8d8;
+$borDefaultRadius:0.07rem;
+/* 字体大小 */
+
+$f22: 0.22rem;
+$f24: 0.24rem;
+$f26: 0.26rem;
+$f28: 0.28rem;
+$f30: 0.3rem;
+$f32: 0.32rem;
+$f34: 0.34rem;
+$f36: 0.36rem;
+
+.stick-bottom {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
+
+.pull-left {
+  float: left
+}
+
+.pull-right {
+  float: right
+}
+
+.padding20 {
+  padding: 20px
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  zoom: 1;
+  clear: both
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.padding20 {
+  padding: 20px;
+}
+
+.hide {
+  display: none;
+}
+
+.no-after:after {
+  height: 0;
+}
+
+.inline-block {
+  display: inline-block;
+}
+.iconfont {
+  font-size: px2rem(16);
+}

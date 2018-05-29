@@ -1,3 +1,7 @@
-@import "./ public/Normalize.css";
+@import "./public/setting";
+@import "./public/text";
+@import "./public/grid";
+
+@import "./public/Normalize";
 @import "../component/tab/tab";
 @import "../component/slider/slider";

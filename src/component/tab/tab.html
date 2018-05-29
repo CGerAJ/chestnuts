@@ -4,17 +4,90 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Tab</title>
+	<link rel="stylesheet" href="../../css/app.css">
 </head>
 
 <body>
-	<div class="chestnuts-tab-wapper">
-		<ul class="chestnuts-tab-header">
-			<li>1</li>
-			<li>1</li>
-			<li>1</li>
-		</ul>
-	</div>
+	<section class="chestnuts-tab-wapper">
+		<nav class="chestnuts-tab-header">
+			<li class="tab-nav-item">1</li>
+			<li class="tab-nav-item">2</li>
+			<li class="tab-nav-item">3</li>
+		</nav>
+		<div class="chestnuts-tab-container">
+			<div class="chestnuts-tab-warp ">
 
+				<!-- start -->
+				<section class="chestnuts-tab-wapper slide1">
+					<nav class="chestnuts-tab-header">
+						<li class="tab-nav-item">1</li>
+						<li class="tab-nav-item">2</li>
+						<li class="tab-nav-item">3</li>
+					</nav>
+					<div class="chestnuts-tab-container">
+						<div class="chestnuts-tab-warp ">
+							1
+						</div>
+						<div class="chestnuts-tab-warp">
+							2
+						</div>
+						<div class="chestnuts-tab-warp">
+							3
+						</div>
+					</div>
+				</section>
+				<!-- end -->
+
+			</div>
+			<div class="chestnuts-tab-warp">
+
+				<!-- start -->
+				<section class="chestnuts-tab-wapper slide2">
+					<nav class="chestnuts-tab-header">
+						<li class="tab-nav-item">1</li>
+						<li class="tab-nav-item">2</li>
+						<li class="tab-nav-item">3</li>
+					</nav>
+					<div class="chestnuts-tab-container">
+						<div class="chestnuts-tab-warp ">
+							1
+						</div>
+						<div class="chestnuts-tab-warp">
+							2
+						</div>
+						<div class="chestnuts-tab-warp">
+							3
+						</div>
+					</div>
+				</section>
+				<!-- end -->
+
+
+			</div>
+			<div class="chestnuts-tab-warp">
+				3
+			</div>
+		</div>
+	</section>
+
+	<script src="./tab.js"></script>
+	<script>
+		window.onload = function () {
+			new tab({
+				select: 0,
+				container: document.querySelector(".chestnuts-tab-wapper"),
+			})
+			new tab({
+				select: 1,
+				container: document.querySelector(".slide1")
+			})
+
+			new tab({
+				select: 2,
+				container: document.querySelector(".slide2")
+			})
+		}
+	</script>
 </body>
 
 </html>
