@@ -1,5 +1,29 @@
-$namespace:"chestnuts-";
-
 .#{$namespace}tab-wapper {
-  background: red;
+  &>.#{$namespace}tab-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &>li {
+      width: 33%;
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      &.active {
+        color: red;
+        border-bottom: 1px solid red;
+      }
+    }
+  }
+  &>.#{$namespace}tab-container {
+    .#{$namespace}tab-warp {
+      width: 100%;
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
 }
