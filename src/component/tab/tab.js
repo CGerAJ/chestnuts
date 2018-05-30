@@ -2,8 +2,8 @@ class tab {
   constructor(options) {
     this.select = options.select || 0;
     this.container = options.container || document.querySelector(".chestnuts-tab-wapper");
-    this.header = options.header || this.getChildNodes(this.container)[0];
-    this.body = options.body || this.getChildNodes(this.container)[1];
+    this.header = this.getChildNodes(this.container)[0];
+    this.body = this.getChildNodes(this.container)[1];
     this.navLength = this.getNavLength();
     this.render();
     this.bind();

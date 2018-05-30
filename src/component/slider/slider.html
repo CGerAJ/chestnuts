@@ -3,18 +3,31 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Tab</title>
+	<title>slider</title>
+	<link rel="stylesheet" href="../../css/app.css">
 </head>
 
 <body>
-	<div class="chestnuts-slide-wapper">
-		<ul class="chestnuts-slide-header">
-			<li>1</li>
-			<li>1</li>
-			<li>1</li>
-		</ul>
+	<div class="chestnuts-slider-container">
+
 	</div>
 
+	<script src="./slider.js"></script>
+	<script>
+		window.onload = function () {
+			const slider = new Slider({
+				container: ".chestnuts-slider-container",
+				images: [
+					"../../images/t0119c74624763dd070.png", 
+					"../../images/t01adbe3351db853eb3.jpg",
+					"../../images/t01645cd5ba0c3b60cb.jpg",
+ 					"../../images/t01331ac159b58f5478.jpg"
+				]
+			})
+			slider.registerPlugins(pluginController, pluginPrev, pluginNext)
+			slider.start()
+		}
+	</script>
 </body>
 
 </html>
