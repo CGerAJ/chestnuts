@@ -1,5 +1,12 @@
-class Slider {
+class Component {
   constructor(options) {
+
+  }
+}
+
+class Slider extends Component {
+  constructor(options) {
+    super(options);
     this.options = options;
     this.container = document.getElementById(options.container) || document.querySelector(options.container);
     this.container.innerHTML = this.render();
@@ -48,7 +55,6 @@ class Slider {
 
   getSelectedItem() {
     const selected = this.container.querySelector(".slider-wrapper").querySelector(".active");
-    console.log(selected)
     return selected;
   }
 
@@ -57,7 +63,6 @@ class Slider {
   }
 
   sliderTo(idx) {
-    console.log(idx)
     const selected = this.getSelectedItem();
     if (selected) {
       selected.className = "slider-slide";
@@ -79,7 +84,6 @@ class Slider {
 
   sliderNext() {
     const currentIdx = this.getSelectedItemIndex();
-    // console.log(currentIdx)
     const nextIdx = (currentIdx + 1) % this.items.length;
     this.sliderTo(nextIdx)
   }
@@ -91,7 +95,6 @@ class Slider {
   }
 
   start() {
-    // console.log(this.container.querySelector(".slider-wrapper").querySelector(".active"))
     this.stop();
     this._timer = setInterval(() => {
       this.sliderNext()
