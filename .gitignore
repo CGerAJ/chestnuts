@@ -5,6 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .codekit-cache
+.scss-cache
 
 # Runtime data
 pids
