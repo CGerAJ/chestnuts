@@ -73,6 +73,7 @@ function iterative(fn) {
 /**
  *[toggle 多函数切换]
  * @param {Function} actions   
+ * 
  switcher.onclick = toggle(
    evt => evt.target.className = 'warn',
    evt => evt.target.className = 'off',
@@ -86,3 +87,62 @@ function toggle(...actions) {
     return action.apply(this, args);
   }
 }
+
+/**
+ *[batch 批处理]
+ * @param {Function} fn 
+ */
+function batch(fn) {
+  return function (target, ...args) {
+    if (target.length >= 0) {
+      return Array.from(target).map(item => fn.apply(this, [item, ...args]))
+    } else {
+      return fn.apply(this, [target, ...args]);
+    }
+  }
+}
+
+/**
+ *[queriable 查询]
+ * @param {Function} fn 
+ */
+function queriable(fn) {
+  return function (selector, ...args) {
+    if (typeof selector === 'string') {
+      selector = document.querySelector(selector);
+    } else {
+      return fn.apply(this, [selector, ...args])
+    }
+  }
+}
+
+/**
+ *[pack 打包处理]
+ * @param {object} map
+ */
+function pack(map) {
+  return function (el, obj) {
+    for (let key in obj) {
+      map[key].call(this, el, obj[key])
+    }
+  }
+}
+
+/**
+ *[methodize]
+ * @param {Function} fn
+ * @param {*} prop 
+ */
+function methodize(fn, prop) {
+  return function (...args) {
+    fn.apply(null, [prop ? this[prop] : this, ...regs])
+    return this;
+  }
+}
+
+const findSomeOneInArray = (f => f(f))(f =>
+  (next => (x, y, i = 0) =>
+    (i >= x.length) ? null :
+    (x[i] == y) ? i :
+    next(x, y, i + 1))((...args) =>
+    (f(f))(...args)))

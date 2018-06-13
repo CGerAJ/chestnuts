@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>toast</title>
+	<link rel="stylesheet" href="../../css/app.css">
+</head>
+
+<body>
+	<button class="btn">点击我</button>
+	<script src="./toast.js"></script>
+	<script src="../public/utils.js"></script>
+	<script>
+		window.onload = function () {
+			document.querySelector(".btn").onclick = (throttle((e) => {
+				new toast({
+					status: "info",
+					content: "提示信息",
+					delay: 3000
+				})
+			}))
+		}
+	</script>
+</body>
+
+</html>
