@@ -5,24 +5,32 @@ javascript library toy project
 # project
 
 ```
-├── app.js    //express services
-├── config.codekit  //use  codekit build scss
-└── src   // dev 
-    ├── component   
+── src
+    ├── component
+    │   ├── public
+    │   │   ├── test-utils.html
+    │   │   └── utils.js
     │   ├── slider
     │   │   ├── slider.html
     │   │   ├── slider.js
     │   │   └── slider.scss
-    │   └── tab
-    │       ├── tab.html
-    │       ├── tab.js
-    │       └── tab.scss
+    │   ├── tab
+    │   │   ├── tab.html
+    │   │   ├── tab.js
+    │   │   └── tab.scss
+    │   └── toast
+    │       ├── toast.html
+    │       ├── toast.js
+    │       └── toast.scss
     ├── css
-    │   ├── Normalize.css
     │   ├── app.css
     │   ├── app.css.map
-    │   └── app.scss
-    ├── images
+    │   ├── app.scss
+    │   └── public
+    │       ├── Normalize.scss
+    │       ├── grid.scss
+    │       ├── setting.scss
+    │       └── text.scss
     └── index.html
 ```
 
