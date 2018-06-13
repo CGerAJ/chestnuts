@@ -1,0 +1,10 @@
+.chestnuts-toast-wapper {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  display: flex; }
+  .chestnuts-toast-wapper > .chestnuts-toast-container .chestnuts-toast-warp {
+    width: 100%;
+    display: none; }
+    .chestnuts-toast-wapper > .chestnuts-toast-container .chestnuts-toast-warp.active {
+      display: block; }

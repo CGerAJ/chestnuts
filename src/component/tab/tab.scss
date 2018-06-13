@@ -1,5 +1,5 @@
 .#{$namespace}tab-wapper {
-  &>.#{$namespace}tab-header {
+  &> .#{$namespace}tab-header {
     width: 100%;
     display: flex;
     justify-content: center;
