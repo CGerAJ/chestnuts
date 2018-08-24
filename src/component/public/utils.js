@@ -21,6 +21,7 @@ function throttle(fn, time = 500) {
   let timer;
   return function (...args) {
     if (timer == null) {
+      console.log(...args)
       fn.apply(this, args);
       timer = setTimeout(() => {
         timer = null
@@ -135,7 +136,7 @@ function pack(map) {
  */
 function methodize(fn, prop) {
   return function (...args) {
-    fn.apply(null, [prop ? this[prop] : this, ...regs])
+    fn.apply(null, [prop ? this[prop] : this, ...args])
     return this;
   }
 }
@@ -146,3 +147,25 @@ const findSomeOneInArray = (f => f(f))(f =>
     (x[i] == y) ? i :
     next(x, y, i + 1))((...args) =>
     (f(f))(...args)))
+
+/**
+ * [memoized]
+ * @param {*} fn 
+ */
+const memoized = (fn) => {
+  const lookupTable = {};
+  return (arg) => lookupTable[arg] || (lookupTable[arg] = fn(arg));
+}
+
+
+/**
+ * [memoized递归调用 组合高阶函数 主要作用是缓存前一次的计算值]
+ * @param {*} fn 
+ */
+const fastFactorial = memoized((n) => {
+  if(n === 0){
+    return 1;
+  }
+  return n * fastFactorial(n-1);
+})
+ 
