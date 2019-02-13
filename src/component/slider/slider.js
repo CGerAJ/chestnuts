@@ -1,7 +1,5 @@
 class Component {
-  constructor(options) {
-
-  }
+  constructor(options) {}
 }
 
 class Slider extends Component {
@@ -50,7 +48,6 @@ class Slider extends Component {
       this.container.style.height = height + "px";
       this.container.querySelector(".slider-wrapper").style.height = height + "px";
     }, 100);
-
   }
 
   getSelectedItem() {
@@ -73,11 +70,11 @@ class Slider extends Component {
     }
 
     const detail = {
-      index: idx
+      index: idx,
     };
     const event = new CustomEvent("slide", {
       bubbles: true,
-      detail
+      detail,
     })
     this.container.dispatchEvent(event)
   }
@@ -104,14 +101,13 @@ class Slider extends Component {
   stop() {
     clearInterval(this._timer);
   }
-
 }
 
 const pluginController = {
   render(images) {
     return `
       <div class="slider-pagination">
-      ${images.map((image, i) => `<span class="slider-pagination-bullet ${i === 0 ? 'active' : "" }"></span>`).join("")}
+      ${images.map((image, i) => `<span class="slider-pagination-bullet ${i === 0 ? 'active' : ""}"></span>`).join("")}
 		</div>
       `.trim()
   },
@@ -120,7 +116,7 @@ const pluginController = {
 
     if (controller) {
       const buttons = document.querySelectorAll(".slider-pagination-bullet");
-      controller.addEventListener('mouseover', evt => {
+      controller.addEventListener('mouseover', (evt) => {
         const idx = Array.from(buttons).indexOf(evt.target);
         if (idx >= 0) {
           slider.sliderTo(idx);
@@ -128,11 +124,11 @@ const pluginController = {
         }
       });
 
-      controller.addEventListener("mouseout", evt => {
+      controller.addEventListener("mouseout", (evt) => {
         slider.start();
       });
 
-      slider.container.addEventListener("slide", evt => {
+      slider.container.addEventListener("slide", (evt) => {
         const idx = evt.detail.index;
         const selected = controller.querySelector(".active");
         if (selected) {
@@ -140,9 +136,8 @@ const pluginController = {
         }
         buttons[idx].className = "slider-pagination-bullet active";
       });
-
     }
-  }
+  },
 }
 
 const pluginPrev = {
@@ -152,14 +147,14 @@ const pluginPrev = {
   action(slider) {
     const prev = slider.container.querySelector(".slider-button-prev");
     if (prev) {
-      prev.addEventListener("click", evt => {
+      prev.addEventListener("click", (evt) => {
         slider.stop();
         slider.slidePrev();
         slider.start();
         evt.preventDefault();
       })
     }
-  }
+  },
 }
 
 const pluginNext = {
@@ -169,12 +164,12 @@ const pluginNext = {
   action(slider) {
     const next = slider.container.querySelector(".slider-button-next");
     if (next) {
-      next.addEventListener("click", evt => {
+      next.addEventListener("click", (evt) => {
         slider.stop();
         slider.sliderNext();
         slider.start();
         evt.preventDefault();
       })
     }
-  }
+  },
 }
